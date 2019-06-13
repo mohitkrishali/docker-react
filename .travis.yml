@@ -7,7 +7,7 @@ before_install:
         - docker build -t mohitkrishali/docker-react -f Dockerfile.dev .
 
 script:
-        - docker run mohitkrishali/docker-react npm run test -- --coverage
+        - travis_wait 2 docker run mohitkrishali/docker-react npm run test -- --coverage
 
 
 deploy:
